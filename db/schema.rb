@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706013021) do
+ActiveRecord::Schema.define(version: 20140706014514) do
 
   create_table "cooking_sessions", force: true do |t|
     t.datetime "first_reading_at"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dish_id"
+    t.integer  "device_id"
+  end
+
+  create_table "devices", force: true do |t|
+    t.string   "name"
+    t.string   "alias"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140706013021) do
     t.float    "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cooking_session_id"
   end
 
 end

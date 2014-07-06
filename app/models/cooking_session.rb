@@ -7,11 +7,14 @@
 #  name             :string(255)
 #  created_at       :datetime
 #  updated_at       :datetime
+#  dish_id          :integer
+#  device_id        :integer
 #
 
 class CookingSession < ActiveRecord::Base
   validates_presence_of :name
 
-  has_one :dish
+  belongs_to :dish
+  belongs_to :device_id
   has_many :readings
 end
