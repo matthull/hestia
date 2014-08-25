@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: sensors
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  alias       :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  description :string(255)
+#  metric      :string(255)
+#
+
+meat:
+  name: Main Meat Thermometer
+  metric: temperature
+  description: meat
+
+ambient:
+  name: Main Ambient Thermometer
+  metric: temperature
+  description: ambient

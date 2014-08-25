@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: readings
+#
+#  id                 :integer          not null, primary key
+#  taken_at           :datetime
+#  value              :float
+#  created_at         :datetime
+#  updated_at         :datetime
+#  cooking_session_id :integer
+#  sensor_id          :integer
+#  metric             :string(255)
+#  description        :string(255)
+#
+
+roast_meat_first:
+  sensor: meat
+  metric: temperature
+  description: meat
+  value: 102.5
+  taken_at: 2014-07-01 18:00:00 UTC
+
+roast_ambient_first:
+  sensor: ambient
+  metric: temperature
+  description: ambient
+  value: 322.7
+  taken_at: 2014-07-01 18:01:00 UTC

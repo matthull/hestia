@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706014514) do
+ActiveRecord::Schema.define(version: 20140729191919) do
 
   create_table "cooking_sessions", force: true do |t|
     t.datetime "first_reading_at"
@@ -19,19 +19,11 @@ ActiveRecord::Schema.define(version: 20140706014514) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "dish_id"
-    t.integer  "device_id"
-  end
-
-  create_table "devices", force: true do |t|
-    t.string   "name"
-    t.string   "alias"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "last_reading_at"
   end
 
   create_table "dishes", force: true do |t|
     t.string   "name"
-    t.integer  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,6 +34,18 @@ ActiveRecord::Schema.define(version: 20140706014514) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cooking_session_id"
+    t.integer  "sensor_id"
+    t.string   "metric"
+    t.string   "description"
+  end
+
+  create_table "sensors", force: true do |t|
+    t.string   "name"
+    t.string   "alias"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description"
+    t.string   "metric"
   end
 
 end
